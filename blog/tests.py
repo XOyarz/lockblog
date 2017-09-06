@@ -21,3 +21,13 @@ class HomePageTest(TestCase):
         expected_html = render_to_string('blog/post_list.html')
 
         self.assertEqual(response.content.decode(), expected_html)
+
+# Third test can replace the previous two
+    def test_home_page_works(self):
+        response = self.client.get('/')
+        self.assertTemplateUsed(response, 'blog/post_list.html')
+
+
+    def test_user_can_log_in_and_out(self):
+        response = self.client.get('/accounts/login/')
+        self.assertTemplateUsed(response, 'registration/login.html')

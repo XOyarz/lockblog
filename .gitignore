@@ -13,3 +13,4 @@ share/
 pip-selfcheck.json
 pyvenv.cfg
 migrations/
+geckodriver.log
